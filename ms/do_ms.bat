@@ -7,5 +7,5 @@ perl util\mk1mf.pl no-asm VC-CE >ms\ce.mak
 perl util\mk1mf.pl dll no-asm VC-CE >ms\cedll.mak
 :skipce
 
-perl util\mkdef.pl 32 libeay > ms\libeay32.def
-perl util\mkdef.pl 32 ssleay > ms\ssleay32.def
+perl util\mkdef.pl 32 libeay > ms\%CRYPTO_PREFIX%libeay32.def
+perl util\mkdef.pl 32 ssleay > ms\%CRYPTO_PREFIX%ssleay32.def

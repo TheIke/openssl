@@ -14,6 +14,8 @@ if ($fips && !$shlib)
 else
 	{
 	$crypto="libeay32";
+    $ssl = $ENV{'CRYPTO_PREFIX'} . $ssl			if (defined($ENV{'CRYPTO_PREFIX'}));
+    $crypto = $ENV{'CRYPTO_PREFIX'} . $crypto	if (defined($ENV{'CRYPTO_PREFIX'}));
 	}
 
 $o='\\';

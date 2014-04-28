@@ -757,6 +757,9 @@ my $symlink;
 my $make_depend=0;
 my %withargs=();
 
+my $crypto_prefix;
+$crypto_prefix = $ENV{'CRYPTO_PREFIX'}	if (defined($ENV{'CRYPTO_PREFIX'}));
+
 my @argvcopy=@ARGV;
 my $argvstring="";
 my $argv_unprocessed=1;
@@ -1976,10 +1979,10 @@ BEGIN
 	    VALUE "FileVersion", "$version\\0"
 #if defined(CRYPTO)
 	    VALUE "InternalName", "libeay32\\0"
-	    VALUE "OriginalFilename", "libeay32.dll\\0"
+	    VALUE "OriginalFilename", "$crypto_prefix" "libeay32.dll\\0"
 #elif defined(SSL)
 	    VALUE "InternalName", "ssleay32\\0"
-	    VALUE "OriginalFilename", "ssleay32.dll\\0"
+	    VALUE "OriginalFilename", "$crypto_prefix" "ssleay32.dll\\0"
 #endif
 	    VALUE "ProductName", "The OpenSSL Toolkit\\0"
 	    VALUE "ProductVersion", "$version\\0"

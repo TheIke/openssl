@@ -247,6 +247,8 @@ if (!$libname) {
 	}
 }
 
+$libname = $ENV{'CRYPTO_PREFIX'} . $libname		if (defined($ENV{'CRYPTO_PREFIX'}));
+
 # If no platform is given, assume WIN32
 if ($W32 + $W16 + $VMS + $OS2 == 0) {
 	$W32 = 1;
